@@ -1,0 +1,21 @@
+data_kategori = {
+    "Game": {"Subway Surfers", "Mobile Legends", "Genshin Impact", "Candy Crush"},
+    "Education": {"Duolingo", "Khan Academy", "Candy Crush", "Mobile Legends"},
+    "Music": {"Spotify", "Joox", "Subway Surfers", "Duolingo"},
+    "Productivity": {"Google Drive", "Microsoft Word", "Candy Crush"}
+}
+
+frekuensi = {}
+for kategori, aplikasi_set in data_kategori.items():
+    for app in aplikasi_set:
+        frekuensi[app] = frekuensi.get(app, 0) + 1
+
+print("=== Aplikasi yang hanya muncul di satu kategori ===")
+for app, jumlah in frekuensi.items():
+    if jumlah == 1:
+        print(app)
+
+print("\n=== Aplikasi yang muncul tepat di dua kategori ===")
+for app, jumlah in frekuensi.items():
+    if jumlah == 2:
+        print(app)
