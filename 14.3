@@ -1,0 +1,15 @@
+file1 = input("Nama file pertama: ")
+file2 = input("Nama file kedua: ")
+
+try:
+    with open(file1, 'r') as f:
+        kata1 = set(f.read().lower().split())
+    with open(file2, 'r') as f:
+        kata2 = set(f.read().lower().split())
+    
+    sama = kata1 & kata2
+    print("\nKata yang muncul di kedua file:")
+    for k in sorted(sama):
+        print(k)
+except:
+    print("Error: File tidak ditemukan.")
